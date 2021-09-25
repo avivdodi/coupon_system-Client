@@ -1,0 +1,7 @@
+  <!-- In this header we check if the user is logged-in or logged-out, then the right button is initialized. -->
+<div class="btn-group">
+  <img src="assets/images/cslogo.JPG" alt="" width="250" height="50">
+  <button routerLink="login" routerLinkActive="active-link" *ngIf="!modeService.isLogin">Login</button>
+  <button routerLink="logout" routerLinkActive="active-link" *ngIf="modeService.isLogin">Logout</button>
+  <button routerLink="about" routerLinkActive="active-link">About</button>
+</div>

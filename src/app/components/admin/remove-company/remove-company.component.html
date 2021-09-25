@@ -1,0 +1,7 @@
+<app-companies></app-companies>
+
+<form action="submit">
+    <p> Please enter the company number to remove <input type="number" placeholder="Company id" [(ngModel)]="id"
+            name="id"></p>
+    <button (click)="removeCompany()" [disabled]="!id">Remove</button>
+</form>

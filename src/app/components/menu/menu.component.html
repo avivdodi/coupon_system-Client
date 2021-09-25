@@ -1,0 +1,8 @@
+<div class="sidenav">
+    <a routerLink="home" routerLinkActive="active-link">Home</a><br>
+    <a routerLink="admin" routerLinkActive="active-link" *ngIf="modeService.role==-1">Admin</a>
+    <a routerLink="customer" routerLinkActive="active-link" *ngIf="modeService.role==1">Customer</a>
+    <a routerLink="company" routerLinkActive="active-link" *ngIf="modeService.role==2">Company</a>
+    <!-- <button onclick="window.close()">Fast disconnect</button> -->
+
+</div>

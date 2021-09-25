@@ -1,0 +1,19 @@
+.btn-group button {
+  background-color: rgba(21, 177, 0, 0);
+  border: 1px solid sandybrown;
+  color: dodgerblue;
+  padding: 10px 24px;
+  cursor: pointer;
+  width: 50%;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.btn-group button:not(:last-child) {
+  border-bottom: none;
+}
+
+.btn-group button:hover {
+  background-color: lightskyblue;
+}

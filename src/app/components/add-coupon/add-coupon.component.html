@@ -1,0 +1,88 @@
+<div class="page">
+        <div class="form">
+                <form action="submit">
+                        <p> Title <input type="text" placeholder="Title..." [formControl]="titleFormControl"
+                                        [ngClass]="{'invalid':titleFormControl.invalid && titleFormControl.touched}"
+                                        name="title" required>
+                        </p>
+
+                        <p> Description <input type="text" placeholder="Description..." name="description"
+                                        [formControl]="descrFormControl"
+                                        [ngClass]="{'invalid':descrFormControl.invalid && descrFormControl.touched}"
+                                        required>
+                        </p>
+                        <p>Price <input type="number" placeholder="Price..." name="price"
+                                        [formControl]="priceFormControl"
+                                        [ngClass]="{'invalid':priceFormControl.invalid && priceFormControl.touched}"
+                                        required></p>
+
+                        <p>Amount <input type="number" placeholder="Amount..." name="amount"
+                                        [formControl]="amountFormControl"
+                                        [ngClass]="{'invalid':amountFormControl.invalid && amountFormControl.touched}"
+                                        required></p>
+
+                        <p>Category <input type="number" placeholder="Category..." name="category"
+                                        [formControl]="categoryFormControl"
+                                        [ngClass]="{'invalid':categoryFormControl.invalid && categoryFormControl.touched}"
+                                        required>
+                        </p>
+
+                        <p>Start date <input type="date" placeholder="Start date..." name="start_date"
+                                        [formControl]="start_dateFormControl"
+                                        [ngClass]="{'invalid':start_dateFormControl.invalid && start_dateFormControl.touched}"
+                                        required>
+                        </p>
+
+                        <p>End date <input type="date" placeholder="End date..." name="end_date"
+                                        [formControl]="end_dateFormControl"
+                                        [ngClass]="{'invalid':end_dateFormControl.invalid && end_dateFormControl.touched}"
+                                        required></p>
+
+                        <p>Image <input type="url" placeholder="Image URL..." [formControl]="imageURLFormControl"
+                                        [ngClass]="{'invalid':imageURLFormControl.invalid && imageURLFormControl.touched}"
+                                        required name="image"></p>
+
+                        <button (click)="addCoupon()" [disabled]="formGroup.invalid">Add</button>
+                </form>
+        </div>
+        <div class="warnings">
+
+                <p *ngIf="titleFormControl.invalid && titleFormControl.touched"><b>Title requirements:</b></p>
+                <p *ngIf="titleFormControl.errors?.required && titleFormControl.touched">Title is missing</p>
+                <p *ngIf="titleFormControl.errors?.minlength && titleFormControl.dirty">Title is too short (at least 4 chars)</p>
+                <p *ngIf="titleFormControl.errors?.maxlength && titleFormControl.dirty">Title is too long (more than 25 chars)</p>
+
+                <p *ngIf="descrFormControl.invalid && descrFormControl.touched"><b>Description requirements:</b></p>
+                <p *ngIf="descrFormControl.errors?.required && descrFormControl.touched">Description is missing</p>
+                <p *ngIf="descrFormControl.errors?.minlength && descrFormControl.dirty">Description is too short (at least 4 chars)</p>
+                <p *ngIf="descrFormControl.errors?.maxlength && descrFormControl.dirty">Description is too long (more than 200 chars)</p>
+
+                <p *ngIf="priceFormControl.invalid && priceFormControl.touched"><b>Price requirements:</b></p>
+                <p *ngIf="priceFormControl.errors?.required && priceFormControl.touched">Price is missing</p>
+                <p *ngIf="priceFormControl.errors?.min && priceFormControl.dirty">Price not valid</p>
+                <p *ngIf="priceFormControl.errors?.max && priceFormControl.dirty">Price allowed to be up to 10,000!</p>
+
+                <p *ngIf="amountFormControl.invalid && amountFormControl.touched"><b>Amount requirements:</b></p>
+                <p *ngIf="amountFormControl.errors?.required && amountFormControl.touched">Amount is missing</p>
+                <p *ngIf="amountFormControl.errors?.min && amountFormControl.dirty">Please fill positive amount</p>
+                <p *ngIf="amountFormControl.errors?.max && amountFormControl.dirty">Amount allowed to be up to 10,000!
+                </p>
+
+                <p *ngIf="categoryFormControl.invalid && categoryFormControl.touched"><b>Category requirements:</b></p>
+                <p *ngIf="categoryFormControl.errors?.required && categoryFormControl.touched">Category is missing</p>
+                <p *ngIf="categoryFormControl.errors?.min && categoryFormControl.dirty">Please fill positive Category
+                </p>
+
+                <p *ngIf="start_dateFormControl.invalid && start_dateFormControl.touched"><b>Start date
+                                requirements:</b></p>
+                <p *ngIf="start_dateFormControl.errors?.required && start_dateFormControl.touched">Start date is missing
+                </p>
+
+                <p *ngIf="end_dateFormControl.invalid && end_dateFormControl.touched"><b>End date requirements:</b></p>
+                <p *ngIf="end_dateFormControl.errors?.required && end_dateFormControl.touched">End date is missing</p>
+
+                <p *ngIf="imageURLFormControl.invalid && imageURLFormControl.touched"><b>Image url requirements:</b></p>
+                <p *ngIf="imageURLFormControl.errors?.required && imageURLFormControl.touched">Link is missing</p>
+
+        </div>
+</div>

@@ -1,0 +1,27 @@
+button {
+    background-color: rgba(21, 177, 0, 0);
+    border: 1px solid sandybrown;
+    color: dodgerblue;
+    padding: 10px 24px;
+    cursor: pointer;
+    width: 50%;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+button:not(:last-child) {
+    border-bottom: none;
+}
+
+button:hover {
+    background-color: lightskyblue;
+}
+
+#all {
+    background-color: #f44336;
+}
+
+#all:hover {
+    background-color: rgba(145, 187, 206, 0.87);
+}

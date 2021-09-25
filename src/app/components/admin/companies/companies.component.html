@@ -1,0 +1,24 @@
+<img *ngIf="!companies" src="assets/images/load.gif">
+
+<div *ngIf="companies">
+    <table>
+        <caption>Companies</caption>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let comp of companies">
+                <td>{{comp.id}}</td>
+                <td>{{comp.name}}</td>
+                <td>{{comp.user.email}}</td>
+                <td>{{comp.user.password}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

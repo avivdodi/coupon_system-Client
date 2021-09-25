@@ -1,0 +1,48 @@
+div {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: dodgerblue;
+}
+
+img {
+    font-weight: bold;
+    padding: 0;
+    color: white;
+    position: sticky;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline;
+    vertical-align: middle;
+}
+
+button {
+    background-color: dodgerblue;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+    float: right;
+    text-transform: uppercase;
+    font-size: .8em;
+    position: sticky;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline;
+    vertical-align: middle;
+}
+
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.active-link {
+    font-weight: bold;
+}

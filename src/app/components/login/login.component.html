@@ -1,0 +1,12 @@
+<div class="container">
+  <label for="email"><b>Email</b></label>
+  <input type="email" placeholder="Enter Email" name="email" [formControl]="emailFormControl" required>
+
+  <label for="password"><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" name="password" [formControl]="passwordFormControl" required>
+
+  <button type="submit" (click)="login()" [disabled]="loginForm.invalid">Login</button>
+  <label>
+    <input type="checkbox" checked="checked" name="remember"> Remember me
+  </label>
+</div>

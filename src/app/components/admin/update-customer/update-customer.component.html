@@ -1,0 +1,59 @@
+<app-customers></app-customers>
+
+
+<div class="page">
+    <div class="form">
+
+        <form action="submit">
+            <p>Id number </p>
+            <input type="number" placeholder="Id" name="id" [formControl]="idFormControl"
+                [ngClass]="{'invalid':idFormControl.invalid && idFormControl.touched}">
+
+            <p> First name</p>
+            <input required type="text" placeholder="First name" name="first_name" [formControl]="firstnameFormControl"
+                [ngClass]="{'invalid':firstnameFormControl.invalid && firstnameFormControl.touched}">
+
+            <p> Last name</p>
+            <input type="text" placeholder="Last name" name="last_name" [formControl]="lasttnameFormControl"
+                [ngClass]="{'invalid':lasttnameFormControl.invalid && lasttnameFormControl.touched}">
+
+            <p> Email</p>
+            <input minlength="11" type="email" placeholder="example@example.xyz" [formControl]="emailFormControl"
+                name="email" [ngClass]="{'invalid':emailFormControl.invalid && emailFormControl.touched}">
+
+            <p>Password</p>
+            <input type="password" placeholder="password..." [formControl]="passwordFormControl" name="password"
+                [ngClass]="{'invalid':passwordFormControl.invalid && passwordFormControl.touched}">
+            <p>
+
+                <p>
+                    <button (click)="updateCustomer()" [disabled]="formGroup.invalid">Update</button>
+                </p>
+        </form>
+    </div>
+
+    <div class="warnings">
+
+        <p *ngIf="firstnameFormControl.invalid && firstnameFormControl.touched"><b>First name requirements:</b></p>
+        <p *ngIf="firstnameFormControl.errors?.required && firstnameFormControl.touched">First name is missing</p>
+        <p *ngIf="firstnameFormControl.errors?.minlength && firstnameFormControl.dirty">First name is too short</p>
+        <p *ngIf="firstnameFormControl.errors?.maxlength && firstnameFormControl.dirty">First name is too long</p>
+
+
+        <p *ngIf="lasttnameFormControl.invalid && lasttnameFormControl.touched"><b>Last name requirements:</b></p>
+        <p *ngIf="lasttnameFormControl.errors?.required && lasttnameFormControl.touched">Last name is missing</p>
+        <p *ngIf="lasttnameFormControl.errors?.minlength && lasttnameFormControl.dirty">Last name is too short</p>
+        <p *ngIf="lasttnameFormControl.errors?.maxlength && lasttnameFormControl.dirty">Last name is too long</p>
+
+        <p *ngIf="emailFormControl.invalid && emailFormControl.touched"><b>Email requirements:</b></p>
+        <p *ngIf="emailFormControl.errors?.required && emailFormControl.touched">Email is missing</p>
+        <p *ngIf="emailFormControl.errors?.minlength && emailFormControl.dirty">Email is too short</p>
+        <p *ngIf="emailFormControl.errors?.pattern && emailFormControl.dirty">Email is invalid</p>
+
+        <p *ngIf="passwordFormControl.invalid && passwordFormControl.touched"><b>Password requirements:</b></p>
+        <p *ngIf="passwordFormControl.errors?.required && passwordFormControl.touched">Password is missing</p>
+        <p *ngIf="passwordFormControl.errors?.minlength && passwordFormControl.dirty">Password is too short</p>
+        <p *ngIf="passwordFormControl.errors?.maxlength && passwordFormControl.dirty">Password is too long</p>
+    </div>
+
+</div>

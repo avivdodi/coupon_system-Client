@@ -1,0 +1,35 @@
+section {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 20% 75% 5%;
+}
+
+header {
+    grid-column: 1 /span 2;
+    grid-row: 1;
+}
+
+aside {
+    grid-column: 1;
+    grid-row: 2 /span 2;
+    border: 1px solid black;
+}
+
+main {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 10px;
+    overflow: scroll
+}
+
+footer {
+    grid-column: 1 /span 2;
+    grid-row: 3;
+}
